@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { mixins } from './mixins'
 
 export const Global = createGlobalStyle`
   *, *::before, *::after {
@@ -37,6 +38,15 @@ export const Global = createGlobalStyle`
     vertical-align: baseline;
   }
  
+  body {
+    background: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors['base-text']};
+  }
+
+  body, input, textarea, button {
+    ${mixins.fonts.textM};
+  }
+
   ol, ul {
 	  list-style: none;
   }

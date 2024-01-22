@@ -1,4 +1,4 @@
 import { Global } from './global'
-import { theme } from './theme/default'
+import { defaultTheme } from './theme/default'
 
-export { Global, theme }
+export { Global, defaultTheme }

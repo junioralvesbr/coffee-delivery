@@ -1,6 +1,7 @@
-import { MapPin } from '@phosphor-icons/react'
-import { Container } from './styles'
+import { MapPin, ShoppingCart } from '@phosphor-icons/react'
 import { Link } from 'react-router-dom'
+
+import { Aside, Container } from './styles'
 
 export function Header() {
   return (
@@ -9,12 +10,16 @@ export function Header() {
         <img src="/logo.svg" alt="logo do coffee delivery" />
       </Link>
 
-      <aside>
+      <Aside>
         <div>
-          <MapPin size={22} weight="fill" color="#8047F8" />
+          <MapPin size={22} weight="fill" />
           <span>Maringá, PR</span>
         </div>
-      </aside>
+
+        <Link to="/cart">
+          <ShoppingCart size={22} weight="fill" />
+        </Link>
+      </Aside>
     </Container>
   )
 }

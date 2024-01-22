@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { Aside, Container } from './styles'
 
-export function Header() {
+export function NavBar() {
   return (
     <Container>
       <Link to="/">

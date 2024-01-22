@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components'
-import { Header } from './components/Header'
+import { NavBar } from './components/NavBar'
 
 import { Global, defaultTheme } from './styles'
 import { Outlet } from 'react-router-dom'
@@ -8,7 +8,7 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Global />
-      <Header />
+      <NavBar />
       <Outlet />
     </ThemeProvider>
   )

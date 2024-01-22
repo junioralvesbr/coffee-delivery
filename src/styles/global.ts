@@ -43,7 +43,7 @@ export const Global = createGlobalStyle`
     color: ${(props) => props.theme.colors['base-text']};
   }
 
-  body, input, textarea, button {
+  body, input, textarea, button, select {
     ${mixins.fonts.textM};
   }
 
@@ -55,11 +55,7 @@ export const Global = createGlobalStyle`
     display: block;
     max-width: 100%;
   }
- 
-  input, button, textarea, select {
-    font: inherit;
-  }
-  
+   
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
   }

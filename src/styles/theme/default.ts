@@ -8,7 +8,7 @@ export const defaultTheme = {
 
     'base-button': '#e6e5e5',
     'base-input': '#ededed',
-    'base-card': 'f3f2f2',
+    'base-card': '#f3f2f2',
     background: '#fafafa',
     white: '#ffffff',
 

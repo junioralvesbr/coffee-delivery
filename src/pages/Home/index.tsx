@@ -1,6 +1,6 @@
 import { useTheme } from 'styled-components'
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react'
-import { Header, Content, InfoGrid } from './styles'
+import { Header, Content, InfoGrid, Card, PriceLabel } from './styles'
 import { Link } from 'react-router-dom'
 
 export function Home() {
@@ -66,23 +66,24 @@ export function Home() {
       <main>
         <h2>Nossos cafés</h2>
 
-        <div>
+        <Card>
           <dl>
             <img src="/coffees/americano.png" alt="foto café americano" />
             <span>Tradicional</span>
             <dt>Expresso Tradicional</dt>
             <dd>O tradicional café feito com água quente e grãos moídos</dd>
-            <div>
+
+            <PriceLabel>
               <span>
                 R$ <strong>9,90</strong>
               </span>
-              <input type="number" />
+
               <Link to="/cart">
-                <ShoppingCart size={20} weight="fill" />
+                <ShoppingCart size={22} weight="fill" />
               </Link>
-            </div>
+            </PriceLabel>
           </dl>
-        </div>
+        </Card>
       </main>
     </>
   )

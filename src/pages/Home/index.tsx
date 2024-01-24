@@ -1,7 +1,7 @@
 import { useTheme } from 'styled-components'
+import { Card } from '../../components/Card'
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react'
-import { Header, Content, InfoGrid, Card, PriceLabel } from './styles'
-import { Link } from 'react-router-dom'
+import { Header, Content, InfoGrid, Main } from './styles'
 
 export function Home() {
   const theme = useTheme()
@@ -9,7 +9,7 @@ export function Home() {
   return (
     <>
       <Header>
-        <Content>
+        <div>
           <div>
             <h1>Encontre o café perfeito para qualquer hora do dia</h1>
             <p>
@@ -60,31 +60,13 @@ export function Home() {
           <picture>
             <img src="/hero.png" alt="Imagem do Hero" />
           </picture>
-        </Content>
+        </div>
       </Header>
 
-      <main>
+      <Main>
         <h2>Nossos cafés</h2>
-
-        <Card>
-          <dl>
-            <img src="/coffees/americano.png" alt="foto café americano" />
-            <span>Tradicional</span>
-            <dt>Expresso Tradicional</dt>
-            <dd>O tradicional café feito com água quente e grãos moídos</dd>
-
-            <PriceLabel>
-              <span>
-                R$ <strong>9,90</strong>
-              </span>
-
-              <Link to="/cart">
-                <ShoppingCart size={22} weight="fill" />
-              </Link>
-            </PriceLabel>
-          </dl>
-        </Card>
-      </main>
+        <Card />
+      </Main>
     </>
   )
 }

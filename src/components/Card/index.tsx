@@ -1,6 +1,7 @@
 import { ShoppingCart } from '@phosphor-icons/react'
 import { Container, InfoPrice, InputCount } from './styles'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 type CardProps = {
   coffee: {
@@ -13,12 +14,19 @@ type CardProps = {
   }
 }
 
-const formatPriceToBRL = Intl.NumberFormat('pt-BR', {
-  style: 'decimal',
-  minimumFractionDigits: 2,
-})
-
 export function Card({ coffee }: CardProps) {
+  const [amount, setAmount] = useState(0)
+
+  function decrementAmount() {
+    if (amount > 0) {
+      setAmount((old) => old - 1)
+    }
+  }
+
+  function incrementAmount() {
+    setAmount((old) => old + 1)
+  }
+
   return (
     <Container>
       <dl>
@@ -29,16 +37,16 @@ export function Card({ coffee }: CardProps) {
 
         <InfoPrice>
           <span>
-            R$ <strong>{formatPriceToBRL.format(coffee.price)}</strong>
+            R$ <strong>{coffee.price.toFixed(2)}</strong>
           </span>
 
           <div>
             <InputCount>
-              <button>
+              <button onClick={decrementAmount}>
                 <img src="/icon-minus.svg" alt="icone de menos" />
               </button>
-              <input type="text" placeholder="0" />
-              <button>
+              <span>{amount}</span>
+              <button onClick={incrementAmount}>
                 <img src="/icon-plus.svg" alt="icone de mais" />
               </button>
             </InputCount>

@@ -2,18 +2,34 @@ import { ShoppingCart } from '@phosphor-icons/react'
 import { Container, InfoPrice, InputCount } from './styles'
 import { Link } from 'react-router-dom'
 
-export function Card() {
+type CardProps = {
+  coffee: {
+    id: string
+    title: string
+    description: string
+    image: string
+    price: number
+    tags: string[]
+  }
+}
+
+const formatPriceToBRL = Intl.NumberFormat('pt-BR', {
+  style: 'decimal',
+  minimumFractionDigits: 2,
+})
+
+export function Card({ coffee }: CardProps) {
   return (
     <Container>
       <dl>
-        <img src="/coffees/americano.png" alt="foto café americano" />
+        <img src={coffee.image} alt={coffee.title} />
         <span>Tradicional</span>
-        <dt>Expresso Tradicional</dt>
-        <dd>O tradicional café feito com água quente e grãos moídos</dd>
+        <dt>{coffee.title}</dt>
+        <dd>{coffee.description}</dd>
 
         <InfoPrice>
           <span>
-            R$ <strong>9,90</strong>
+            R$ <strong>{formatPriceToBRL.format(coffee.price)}</strong>
           </span>
 
           <div>

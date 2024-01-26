@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   & > dl {
     text-align: center;
-    transform: translateY(-10%);
+    transform: translateY(-8%);
 
     img {
       margin-inline: auto;

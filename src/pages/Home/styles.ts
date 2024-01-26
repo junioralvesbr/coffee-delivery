@@ -5,6 +5,7 @@ export const Header = styled.header`
   background-image: url('/background.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  padding-bottom: 90px;
 
   & > div {
     display: flex;
@@ -52,4 +53,19 @@ export const InfoGrid = styled.div`
   }
 `
 
-export const Main = styled.main``
+export const Main = styled.main`
+  max-width: 1280px;
+  margin-inline: auto;
+
+  h2 {
+    ${mixins.fonts.titleL}
+    color: ${(props) => props.theme.colors['base-subtitle']}
+  }
+`
+
+export const CardGrid = styled.div`
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+`

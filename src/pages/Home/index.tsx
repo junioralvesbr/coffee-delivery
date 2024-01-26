@@ -1,7 +1,9 @@
 import { useTheme } from 'styled-components'
-import { Card } from '../../components/Card'
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react'
-import { Header, Content, InfoGrid, Main } from './styles'
+import { Card } from '../../components/Card'
+import { CardGrid, Header, InfoGrid, Main } from './styles'
+
+import { coffees } from '../../../data.json'
 
 export function Home() {
   const theme = useTheme()
@@ -65,7 +67,12 @@ export function Home() {
 
       <Main>
         <h2>Nossos cafés</h2>
-        <Card />
+
+        <CardGrid>
+          {coffees.map((coffee) => (
+            <Card key={coffee.id} coffee={coffee} />
+          ))}
+        </CardGrid>
       </Main>
     </>
   )

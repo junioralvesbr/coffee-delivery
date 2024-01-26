@@ -1,5 +1,5 @@
 import { ShoppingCart } from '@phosphor-icons/react'
-import { Container, InfoPrice } from './styles'
+import { Container, InfoPrice, InputCount } from './styles'
 import { Link } from 'react-router-dom'
 
 export function Card() {
@@ -16,9 +16,21 @@ export function Card() {
             R$ <strong>9,90</strong>
           </span>
 
-          <Link to="/cart">
-            <ShoppingCart size={22} weight="fill" />
-          </Link>
+          <div>
+            <InputCount>
+              <button>
+                <img src="/icon-minus.svg" alt="icone de menos" />
+              </button>
+              <input type="text" placeholder="0" />
+              <button>
+                <img src="/icon-plus.svg" alt="icone de mais" />
+              </button>
+            </InputCount>
+
+            <Link to="/cart">
+              <ShoppingCart size={22} weight="fill" />
+            </Link>
+          </div>
         </InfoPrice>
       </dl>
     </Container>

@@ -1,5 +1,5 @@
 import { ShoppingCart } from '@phosphor-icons/react'
-import { Container } from './styles'
+import { Container, InfoPrice } from './styles'
 import { Link } from 'react-router-dom'
 
 export function Card() {
@@ -11,7 +11,7 @@ export function Card() {
         <dt>Expresso Tradicional</dt>
         <dd>O tradicional café feito com água quente e grãos moídos</dd>
 
-        <div>
+        <InfoPrice>
           <span>
             R$ <strong>9,90</strong>
           </span>
@@ -19,7 +19,7 @@ export function Card() {
           <Link to="/cart">
             <ShoppingCart size={22} weight="fill" />
           </Link>
-        </div>
+        </InfoPrice>
       </dl>
     </Container>
   )

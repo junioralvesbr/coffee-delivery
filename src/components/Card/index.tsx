@@ -1,7 +1,8 @@
 import { ShoppingCart } from '@phosphor-icons/react'
-import { Container, InfoPrice, InputCount } from './styles'
+import { Container, InfoPrice } from './styles'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { InputCount } from '../InputCount'
 
 type CardProps = {
   coffee: {
@@ -41,15 +42,7 @@ export function Card({ coffee }: CardProps) {
           </span>
 
           <div>
-            <InputCount>
-              <button onClick={decrementAmount}>
-                <img src="/icon-minus.svg" alt="icone de menos" />
-              </button>
-              <span>{amount}</span>
-              <button onClick={incrementAmount}>
-                <img src="/icon-plus.svg" alt="icone de mais" />
-              </button>
-            </InputCount>
+            <InputCount />
 
             <Link to="/cart">
               <ShoppingCart size={22} weight="fill" />

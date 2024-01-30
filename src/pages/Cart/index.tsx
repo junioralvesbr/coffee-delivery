@@ -1,15 +1,20 @@
+import { InputCount } from '../../components/InputCount'
 import {
   Bank,
   CreditCard,
   CurrencyDollar,
   MapPinLine,
   Money,
+  Trash,
 } from '@phosphor-icons/react'
 import {
+  CoffeCard,
+  ConfirmButton,
   Container,
   DescriptionSection,
   InputForm,
-  MainSection,
+  InputSection,
+  Order,
   RadioForm,
 } from './styles'
 
@@ -19,7 +24,7 @@ export function Cart() {
       <main>
         <h2>Complete seu pedido</h2>
 
-        <MainSection>
+        <section>
           <DescriptionSection>
             <MapPinLine size={22} style={{ color: '#c47f17' }} />
             <span>Endereço de Entrega</span>
@@ -39,9 +44,9 @@ export function Cart() {
             <input type="text" placeholder="Cidade" className="cidade" />
             <input type="text" placeholder="UF" className="uf" />
           </InputForm>
-        </MainSection>
+        </section>
 
-        <MainSection>
+        <section>
           <DescriptionSection>
             <CurrencyDollar size={22} style={{ color: '#8047f8' }} />
             <span>Pagamento</span>
@@ -51,29 +56,84 @@ export function Cart() {
           </DescriptionSection>
 
           <RadioForm>
-            <label htmlFor="cred-card">
+            <input type="radio" id="cred-card2" name="payment" />
+            <label htmlFor="cred-card2">
               <CreditCard size={16} style={{ color: '#8047F8' }} />
               Cartão de crédito
-              <input type="radio" id="cred-card" name="payment" />
             </label>
 
+            <input type="radio" id="debit-card" name="payment" />
             <label htmlFor="debit-card">
               <Bank size={16} style={{ color: '#8047F8' }} />
-              Cartão de débito
-              <input type="radio" id="debit-card" name="payment" />
+              <span>Cartão de débito</span>
             </label>
 
+            <input type="radio" id="money" name="payment" />
             <label htmlFor="money">
               <Money size={16} style={{ color: '#8047F8' }} />
-              Dinheiro
-              <input type="radio" id="money" name="payment" />
+              <span>Dinheiro</span>
             </label>
           </RadioForm>
-        </MainSection>
+        </section>
       </main>
 
       <aside>
         <h2>Cafés selecionados</h2>
+
+        <section>
+          <CoffeCard>
+            <div>
+              <img src="/coffees/americano.png" alt="americano" />
+              <InputSection>
+                <h3>Expresso Tradicional</h3>
+                <div>
+                  <InputCount />
+                  <button>
+                    <Trash size={16} style={{ color: '#8047F8' }} />
+                    Remove
+                  </button>
+                </div>
+              </InputSection>
+            </div>
+            <h4>R$ 9,90</h4>
+          </CoffeCard>
+
+          <CoffeCard>
+            <div>
+              <img src="/coffees/americano.png" alt="americano" />
+              <InputSection>
+                <h3>Expresso Tradicional</h3>
+                <div>
+                  <InputCount />
+                  <button>
+                    <Trash size={16} style={{ color: '#8047F8' }} />
+                    Remove
+                  </button>
+                </div>
+              </InputSection>
+            </div>
+            <h4>R$ 9,90</h4>
+          </CoffeCard>
+
+          <Order>
+            <div>
+              <span>Total de itens</span>
+              <em>R$ 29,70</em>
+            </div>
+
+            <div>
+              <span>Entrega</span>
+              <em>R$ 3,50</em>
+            </div>
+
+            <div>
+              <strong>Total</strong>
+              <strong>R$ 33,20</strong>
+            </div>
+          </Order>
+
+          <ConfirmButton>Confirmar pedido</ConfirmButton>
+        </section>
       </aside>
     </Container>
   )

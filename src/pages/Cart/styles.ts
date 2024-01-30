@@ -4,16 +4,29 @@ import { mixins } from '../../styles/mixins'
 export const Container = styled.div`
   max-width: 1280px;
   margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 
   h2 {
     ${mixins.fonts.titleXS}
     color: ${(props) => props.theme.colors['base-subtitle']}
   }
-`
 
-export const MainSection = styled.div`
-  padding: 2.5rem;
-  background-color: ${(props) => props.theme.colors['base-card']};
+  main {
+    flex: 1;
+  }
+
+  aside {
+    min-width: 448px;
+  }
+
+  section {
+    background-color: ${(props) => props.theme.colors['base-card']};
+    margin-top: 1rem;
+    padding: 2.5rem;
+    border-radius: 6px;
+  }
 `
 
 export const DescriptionSection = styled.div`
@@ -107,12 +120,116 @@ export const InputForm = styled.form`
 `
 
 export const RadioForm = styled.form`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+
   label {
-    display: inline-block;
-    padding: 1rem;
     ${mixins.fonts.buttonM}
     text-transform: uppercase;
     color: ${(props) => props.theme.colors['base-text']};
     background-color: ${(props) => props.theme.colors['base-button']};
+
+    padding: 1rem;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
   }
+
+  input:checked + label {
+    border-color: ${(props) => props.theme.colors.purple};
+    background-color: ${(props) => props.theme.colors['purple-light']};
+  }
+
+  input {
+    display: none;
+  }
+`
+
+export const CoffeCard = styled.article`
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6e5e5;
+  padding-block: 20px;
+
+  > div {
+    display: flex;
+    gap: 20px;
+    height: 64px;
+  }
+
+  h4 {
+    ${mixins.fonts.textM}
+    font-weight: 700;
+    color: ${(props) => props.theme.colors['base-text']};
+  }
+`
+
+export const InputSection = styled.div`
+  div {
+    display: flex;
+    gap: 8px;
+
+    > button {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      gap: 4px;
+      ${mixins.fonts.buttonM}
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      color: ${(props) => props.theme.colors['base-text']};
+      background-color: ${(props) => props.theme.colors['base-button']};
+      border-radius: 6px;
+      padding-inline: 8px;
+      cursor: pointer;
+    }
+  }
+`
+
+export const Order = styled.div`
+  margin-top: 24px;
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    color: ${(props) => props.theme.colors['base-text']};
+
+    span {
+      ${mixins.fonts.textS}
+    }
+
+    em {
+      ${mixins.fonts.textM}
+    }
+
+    strong {
+      ${mixins.fonts.textL}
+      font-weight: 700;
+      color: ${(props) => props.theme.colors['base-subtitle']};
+    }
+  }
+`
+
+export const ConfirmButton = styled.button`
+  ${mixins.fonts.buttonG}
+  text-transform: uppercase;
+  color: ${(props) => props.theme.colors.white};
+
+  background-color: ${(props) => props.theme.colors.yellow};
+  border: 1px solid transparent;
+  border-radius: 6px;
+
+  width: 100%;
+  padding: 12px 8px;
+  cursor: pointer;
+
+  margin-top: 24px;
 `

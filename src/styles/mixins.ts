@@ -68,7 +68,7 @@ export const mixins = {
     buttonM: css`
       font-family: 'Roboto', sans-serif;
       font-size: 0.75rem;
-      line-height: 1.3;
+      line-height: 1.6;
       font-weight: 400;
     `,
     buttonG: css`

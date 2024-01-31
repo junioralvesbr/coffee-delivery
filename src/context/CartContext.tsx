@@ -17,7 +17,9 @@ export const CartContextProvider = ({ children }) => {
   const [itemList, setItemList] = useState<ItemList[]>([])
 
   const addItemToList = (newItem: ItemList) => {
-    setItemList((old) => [...old, newItem])
+    if (!itemList.includes(newItem)) {
+      setItemList((old) => [...old, newItem])
+    }
   }
 
   const removeItemToList = (itemToRemove) => {

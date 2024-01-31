@@ -1,7 +1,9 @@
 import { ShoppingCart } from '@phosphor-icons/react'
 import { Container, InfoPrice } from './styles'
-import { Link } from 'react-router-dom'
 import { InputCount } from '../InputCount'
+import { useContext } from 'react'
+
+import { CartContext } from '../../context/CartContext'
 
 type CardProps = {
   coffee: {
@@ -15,6 +17,8 @@ type CardProps = {
 }
 
 export function Card({ coffee }: CardProps) {
+  const { addItemToList } = useContext(CartContext)
+
   return (
     <Container>
       <dl>
@@ -31,9 +35,9 @@ export function Card({ coffee }: CardProps) {
           <div>
             <InputCount />
 
-            <Link to="/cart">
+            <button onClick={() => addItemToList(coffee)}>
               <ShoppingCart size={22} weight="fill" />
-            </Link>
+            </button>
           </div>
         </InfoPrice>
       </dl>

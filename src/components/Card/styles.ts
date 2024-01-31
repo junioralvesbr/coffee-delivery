@@ -58,11 +58,13 @@ export const InfoPrice = styled.div`
     align-items: center;
     gap: 8px;
 
-    > a {
+    > button {
       background-color: ${(props) => props.theme.colors['purple-dark']};
       color: ${(props) => props.theme.colors.white};
       padding: 8px;
+      border: none;
       border-radius: 6px;
+      cursor: pointer;
     }
   }
 `

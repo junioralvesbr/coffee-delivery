@@ -3,14 +3,17 @@ import { NavBar } from './components/NavBar'
 
 import { Global, defaultTheme } from './styles'
 import { Outlet } from 'react-router-dom'
+import { CartContextProvider } from './context/CartContext'
 
 function App() {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Global />
-      <NavBar />
-      <Outlet />
-    </ThemeProvider>
+    <CartContextProvider>
+      <ThemeProvider theme={defaultTheme}>
+        <Global />
+        <NavBar />
+        <Outlet />
+      </ThemeProvider>
+    </CartContextProvider>
   )
 }
 

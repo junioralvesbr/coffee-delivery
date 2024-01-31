@@ -1,24 +1,27 @@
-import { InputCount } from '../../components/InputCount'
+import { CoffeCard } from './CoffeCard'
 import {
   Bank,
   CreditCard,
   CurrencyDollar,
   MapPinLine,
   Money,
-  Trash,
 } from '@phosphor-icons/react'
+
 import {
-  CoffeCard,
   ConfirmButton,
   Container,
   DescriptionSection,
   InputForm,
-  InputSection,
   Order,
   RadioForm,
 } from './styles'
+import { useContext } from 'react'
+
+import { CartContext } from '../../context/CartContext'
 
 export function Cart() {
+  const { itemList } = useContext(CartContext)
+
   return (
     <Container>
       <main>
@@ -81,39 +84,9 @@ export function Cart() {
         <h2>Cafés selecionados</h2>
 
         <section>
-          <CoffeCard>
-            <div>
-              <img src="/coffees/americano.png" alt="americano" />
-              <InputSection>
-                <h3>Expresso Tradicional</h3>
-                <div>
-                  <InputCount />
-                  <button>
-                    <Trash size={16} style={{ color: '#8047F8' }} />
-                    Remove
-                  </button>
-                </div>
-              </InputSection>
-            </div>
-            <h4>R$ 9,90</h4>
-          </CoffeCard>
-
-          <CoffeCard>
-            <div>
-              <img src="/coffees/americano.png" alt="americano" />
-              <InputSection>
-                <h3>Expresso Tradicional</h3>
-                <div>
-                  <InputCount />
-                  <button>
-                    <Trash size={16} style={{ color: '#8047F8' }} />
-                    Remove
-                  </button>
-                </div>
-              </InputSection>
-            </div>
-            <h4>R$ 9,90</h4>
-          </CoffeCard>
+          {itemList.map((item, index: number) => (
+            <CoffeCard item={item} key={index} />
+          ))}
 
           <Order>
             <div>

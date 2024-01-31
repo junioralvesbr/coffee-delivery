@@ -24,7 +24,6 @@ export function Home() {
                 <ShoppingCart
                   size={32}
                   weight="fill"
-                  color={theme.colors.background}
                   style={{ backgroundColor: theme.colors['yellow-dark'] }}
                 />
                 <span>Compra simples e segura</span>
@@ -33,7 +32,6 @@ export function Home() {
                 <Timer
                   size={32}
                   weight="fill"
-                  color={theme.colors.background}
                   style={{ backgroundColor: theme.colors.yellow }}
                 />
                 <span>Entrega rápida e rastreada</span>
@@ -42,7 +40,6 @@ export function Home() {
                 <Package
                   size={32}
                   weight="fill"
-                  color={theme.colors.background}
                   style={{ backgroundColor: theme.colors['base-text'] }}
                 />
                 <span>Embalagem mantém o café intacto</span>

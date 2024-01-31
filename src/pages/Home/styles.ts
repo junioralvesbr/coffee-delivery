@@ -42,6 +42,7 @@ export const InfoGrid = styled.div`
     gap: 0.75rem;
 
     svg {
+      color: ${(props) => props.theme.colors.background};
       padding: 8px;
       border-radius: 100%;
     }

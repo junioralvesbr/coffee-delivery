@@ -1,9 +1,9 @@
 import { ShoppingCart } from '@phosphor-icons/react'
 import { Container, InfoPrice } from './styles'
-import { InputCount } from '../InputCount'
+import { InputCount } from '../../../components/InputCount'
 import { useContext } from 'react'
 
-import { CartContext } from '../../context/CartContext'
+import { CartContext } from '../../../context/CartContext'
 
 type CardProps = {
   coffee: {

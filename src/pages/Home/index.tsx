@@ -1,6 +1,6 @@
 import { useTheme } from 'styled-components'
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react'
-import { Card } from '../../components/Card'
+import { Card } from './Card'
 import { CardGrid, Header, InfoGrid, Main } from './styles'
 
 import { coffees } from '../../../data.json'

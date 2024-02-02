@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Container } from './styles'
 
-export function InputCount() {
-  const [amount, setAmount] = useState(0)
+export function InputCount({ amount, setAmount }) {
+  // const [amount, setAmount] = useState(0)
 
   function decrementAmount() {
     if (amount > 0) {

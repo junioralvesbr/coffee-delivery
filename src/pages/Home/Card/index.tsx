@@ -1,7 +1,7 @@
 import { ShoppingCart } from '@phosphor-icons/react'
 import { Container, InfoPrice } from './styles'
 import { InputCount } from '../../../components/InputCount'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 import { CartContext } from '../../../context/CartContext'
 
@@ -18,6 +18,20 @@ type CardProps = {
 
 export function Card({ coffee }: CardProps) {
   const { addItemToList } = useContext(CartContext)
+  const [amount, setAmount] = useState(1)
+
+  useEffect(() => {
+    if (coffee.qtd) {
+      setAmount(coffee.qtd)
+    }
+  }, [coffee.qtd])
+
+  const handleAddItemToList = () => {
+    coffee.qtd = amount
+    addItemToList(coffee)
+
+    console.log(coffee)
+  }
 
   return (
     <Container>
@@ -33,9 +47,9 @@ export function Card({ coffee }: CardProps) {
           </span>
 
           <div>
-            <InputCount />
+            <InputCount amount={amount} setAmount={setAmount} />
 
-            <button onClick={() => addItemToList(coffee)}>
+            <button onClick={() => handleAddItemToList()}>
               <ShoppingCart size={22} weight="fill" />
             </button>
           </div>
